@@ -1,0 +1,174 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+html{
+    background-color: darkred;
+}
+body
+{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+#container {
+    width: 900px;
+    height: 600px;
+    background-image: url(FondDecran.jpg);
+    background-size: cover;
+    position: absolute;
+}
+#container #Perso {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background: url(PersoRun.PNG);
+    animation: run-animation 0.7s steps(6) infinite ;
+    bottom: 80px;
+    left: 50px;
+}
+@keyframes run-animation {
+
+    from{
+        background-position: 0px;
+    }
+
+    to{
+        background-position: -1000px;
+    }
+}
+#container #Perso.persoJump {
+    animation: animateJumpPerso 0.7s linear 1;
+    width: 120px;
+    height: 200px;
+}
+@keyframes animateJumpPerso{
+    0% {
+        bottom: 80px;   
+    }
+    25% {
+        bottom: 270px;
+    }
+    75% {
+        bottom: 270px;
+    }
+    100% {
+        bottom: 80px; 
+}
+}
+#container #Perso.persoCrouched {
+    animation: animateCrouchedPerso 0.7s linear infinite;
+    bottom: 50px;
+    height: 200px;
+    width: 150px;
+} 
+@keyframes animateCrouchedPerso{
+    0% {
+        background: url(PersoAccroupi.png);
+        background-size: contain;
+    }
+    25% {
+        background: url(PersoAccroupi.png);
+        background-size: contain;
+    }
+    75% {
+        background: url(PersoAccroupi.png);
+        background-size: contain;
+    }
+    100% {
+        background: url(PersoAccroupi.png);
+        background-size: contain;
+} 
+}
+
+#mummy
+{
+    height: 200px;
+    width: 150px;
+    position: absolute;
+    bottom: 50px;
+    right: -5px;
+    visibility: hidden;
+    background-image: url(mummy.png);
+}
+
+.mummyActive
+{
+    animation: mummyAnimate 2s linear;
+    animation-iteration-count: 10;
+}
+
+@keyframes mummyAnimate{
+    0%
+    {
+        right: -5px;
+        visibility: visible;
+    }
+    100%
+    {
+        right: 90%;
+        visibility: hidden;
+    }
+}
+
+#comete
+{
+    height: 89px;
+    width: 100px;
+    position: absolute;
+    bottom: 230px;
+    right: -5px;
+    visibility: hidden;
+    background-image: url(comete.png);
+} 
+.cometeActive
+{
+    animation: cometeAnimate 2s linear;
+    animation-iteration-count: 10;
+    animation-delay: 1s;
+}
+
+@keyframes cometeAnimate{
+    0%
+    {
+        right: -5px;
+        visibility: visible;
+    }
+    100%
+    {
+        right: 90%;
+        visibility: hidden;
+    }
+}
+
+#score
+{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+#gameOver {
+    display: none;
+    font-size: 70px;
+    position: absolute;
+    left: calc(50% - 181px);
+    top: calc(50% - 40px);
+    width: 390px;
+    height: 80px;
+    color: #525252;
+}
+#gameWon {
+    display: none;
+    font-size: 70px;
+    position: absolute;
+    left: calc(50% - 181px);
+    top: calc(50% - 40px);
+    width: 390px;
+    height: 80px;
+    color: #525252;
+}
