@@ -22,6 +22,7 @@ window.addEventListener("keydown", (start) => {
     //    console.log(start);
     if (start.code == "Space") {
         gameOver.style.display = "none";
+        gameWon.style.display = "none";
         playerScore = 0;
         mummy.classList.add("mummyActive");
         comete.classList.add("cometeActive");
